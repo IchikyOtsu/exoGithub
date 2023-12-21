@@ -47,7 +47,7 @@ function checkPair(board, choice1, choice2) {
 }
 
 // Exemple d'utilisation
-let board = initGameBoard(4);
+let game= initGameBoard(4);
 displayBoard(board);
 // Le joueur sélectionne deux positions [x1, y1] et [x2, y2]
 // checkPair(board, [x1, y1], [x2, y2]);
