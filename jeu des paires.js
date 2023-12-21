@@ -9,11 +9,12 @@ function shuffleArray(array) {
 }
 
 function initGameBoard(size) {
+    board = []
     let boardSize = size * size;
 
     // Dupliquez chaque mot pour faire des paires
     words = words.slice(0, boardSize / 2).concat(words.slice(0, boardSize / 2));
-
+    debugger;
     // Mélangez les mots
     shuffleArray(words);
 
@@ -22,12 +23,14 @@ function initGameBoard(size) {
         board[i] = words.slice(i * size, (i + 1) * size);
     }
     
-    return board;
+    //return board;
 }
 
 function displayBoard(board) {
+    debugger;
     for (let row of board) {
-        console.log(row.map(word => word ? '??' : word).join(' '));
+        console.log(row.map(word => word == null ? '??' : word).join(' '));
+
     }
 }
 
@@ -42,7 +45,7 @@ function checkPair(board, choice1, choice2) {
         return true;
     } else {
         console.log('Not a pair.');
-        return false;
+        //return false;
     }
 }
 
