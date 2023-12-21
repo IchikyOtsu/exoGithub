@@ -14,7 +14,6 @@ function initGameBoard(size) {
 
     // Dupliquez chaque mot pour faire des paires
     words = words.slice(0, boardSize / 2).concat(words.slice(0, boardSize / 2));
-    debugger;
     // Mélangez les mots
     shuffleArray(words);
 
@@ -23,11 +22,10 @@ function initGameBoard(size) {
         board[i] = words.slice(i * size, (i + 1) * size);
     }
     
-    //return board;
+    return board;
 }
 
 function displayBoard(board) {
-    debugger;
     for (let row of board) {
         console.log(row.map(word => word == null ? '??' : word).join(' '));
 
@@ -37,7 +35,6 @@ function displayBoard(board) {
 function checkPair(board, choice1, choice2) {
     let [x1, y1] = choice1;
     let [x2, y2] = choice2;
-
     if (board[x1][y1] === board[x2][y2]) {
         console.log('Pair found!');
         board[x1][y1] = null;
@@ -45,12 +42,11 @@ function checkPair(board, choice1, choice2) {
         return true;
     } else {
         console.log('Not a pair.');
-        //return false;
+        return false;
     }
 }
 
 // Exemple d'utilisation
-let game= initGameBoard(4);
-displayBoard(board);
-// Le joueur sélectionne deux positions [x1, y1] et [x2, y2]
-// checkPair(board, [x1, y1], [x2, y2]);
+let game = initGameBoard(4);
+displayBoard(game);
+//checkPair(game, [1,3], [0,1])
